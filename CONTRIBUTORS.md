@@ -1,13 +1,13 @@
 # Contributing
 
 When contributing to this repository, please first discuss the change you wish
-to make via an [issue](https://github.com/sigstore/{project-name}/issues).
+to make via an [issue](https://github.com/sigstore/sigstore-go/issues).
 
 ## Pull Request Process
 
-1. Create an [issue](https://github.com/sigstore/{project-name}/issues)
+1. Create an [issue](https://github.com/sigstore/sigstore-go/issues)
    outlining the fix or feature.
-2. Fork the {project-name} repository to your own github account and clone it locally.
+2. Fork the sigstore-go repository to your own github account and clone it locally.
 3. Hack on your changes.
 4. Update the README.md with details of changes to any interface, this includes new environment
    variables, exposed ports, useful file locations, CLI parameters and
@@ -15,7 +15,7 @@ to make via an [issue](https://github.com/sigstore/{project-name}/issues).
 5. Correctly format your commit message see [Commit Messages](#Commit Message Guidelines)
    below.
 6. Ensure that CI passes, if it fails, fix the failures.
-7. Every pull request requires a review from the [core {project-name} team](https://github.com/orgs/github.com/sigstore/teams/{project-name}-codeowners)
+7. Every pull request requires a review from the [core sigstore-go team](https://github.com/orgs/github.com/sigstore/teams/sigstore-go-codeowners)
    before merging.
 8. If your pull request consists of more than one commit, please squash your
    commits as described in [Squash Commits](#Squash Commits)
@@ -111,5 +111,5 @@ to github):
 Alternatively, a core member can squash your commits within Github.
 ## Code of Conduct
 
-{project-name} adheres to and enforces the [Contributor Covenant](http://contributor-covenant.org/version/1/4/) Code of Conduct.
-Please take a moment to read the [CODE_OF_CONDUCT.md](https://github.com/sigstore/{project-name}/blob/master/CODE_OF_CONDUCT.md) document.
+sigstore-go adheres to and enforces the [Contributor Covenant](http://contributor-covenant.org/version/1/4/) Code of Conduct.
+Please take a moment to read the [CODE_OF_CONDUCT.md](https://github.com/sigstore/sigstore-go/blob/master/CODE_OF_CONDUCT.md) document.
