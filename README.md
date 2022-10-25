@@ -1,4 +1,8 @@
-# Project Name
+# sigstore-go 
+
+This is a Go library to interact with [sigstore](https://sigstore.dev/).
+
+The project is under early development.
 
 ## Security
 
