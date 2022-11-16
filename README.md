@@ -2,7 +2,7 @@
 
 This is a Go client library for [Sigstore](https://sigstore.dev/).
 
-The project is under early development and **you shouldn't depend on it** yet. In the long run, you should depend on sigstore-go instead of cosign or sigstore/sigstore *unless* you need support for OCI registries/containers.
+The project is under early development and **you shouldn't depend on it** yet. In the long run, you should depend on sigstore-go instead of cosign or sigstore/sigstore if you need a Sigstore Go client library, but don't need support for OCI registries/containers. Use cosign if you need OCI support, or if you're looking for a CLI signing/verification tool.
 
 ## Sigstore Library Landscape
 
