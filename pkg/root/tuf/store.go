@@ -32,7 +32,7 @@ var (
 
 // localStoreFromOpts creates a local store depending on the TUF configuration
 // and uses the RepositoryOptions to name the metadata directory.
-func localStoreFromOpts(opts *TUFClientOptions) (client.LocalStore, error) {
+func localStoreFromOpts(opts *ClientOptions) (client.LocalStore, error) {
 	switch opts.CacheType {
 	case Disk:
 		if opts.CacheLocation == "" {
