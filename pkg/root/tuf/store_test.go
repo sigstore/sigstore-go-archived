@@ -27,44 +27,44 @@ func TestLocalStoreFromOpts(t *testing.T) {
 	t.Parallel()
 	dir := t.TempDir()
 	created := filepath.Join(dir, "created")
-	if err := os.Mkdir(created, 0750); err != nil {
+	if err := os.Mkdir(created, 0o750); err != nil {
 		t.Fatal(err)
 	}
 	testCases := []struct {
 		name      string
-		opts      *TUFClientOptions
+		opts      *ClientOptions
 		wantError error
 	}{
 		{
-			name: "unkown cache type",
-			opts: &TUFClientOptions{
+			name: "unknown cache type",
+			opts: &ClientOptions{
 				CacheType: 3,
 			},
 			wantError: errUnknownCacheType,
 		},
 		{
 			name: "cache type memory",
-			opts: &TUFClientOptions{
+			opts: &ClientOptions{
 				CacheType: Memory,
 			},
 		},
 		{
 			name: "cache type disk no location",
-			opts: &TUFClientOptions{
+			opts: &ClientOptions{
 				CacheType: Disk,
 			},
 			wantError: errUnknownCacheLocation,
 		},
 		{
 			name: "cache type disk new cache",
-			opts: &TUFClientOptions{
+			opts: &ClientOptions{
 				CacheType:     Disk,
 				CacheLocation: filepath.Join(dir, "test"),
 			},
 		},
 		{
 			name: "cache type disk already created",
-			opts: &TUFClientOptions{
+			opts: &ClientOptions{
 				CacheType:     Disk,
 				CacheLocation: created,
 			},
@@ -94,7 +94,7 @@ func TestLocalStoreFromOpts(t *testing.T) {
 
 func TestRemoteStoreFromOpts(t *testing.T) {
 	fileRemote := t.TempDir()
-	if err := os.Mkdir(filepath.Join(fileRemote, "targets"), 0750); err != nil {
+	if err := os.Mkdir(filepath.Join(fileRemote, "targets"), 0o750); err != nil {
 		t.Fatal(err)
 	}
 

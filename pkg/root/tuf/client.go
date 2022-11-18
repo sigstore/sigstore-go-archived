@@ -46,7 +46,7 @@ type SigstoreTufClient struct {
 }
 
 // NewSigstoreTufClient creates a new client given client options.
-func NewSigstoreTufClient(opts *TUFClientOptions) (*SigstoreTufClient, error) {
+func NewSigstoreTufClient(opts *ClientOptions) (*SigstoreTufClient, error) {
 	local, err := localStoreFromOpts(opts)
 	if err != nil {
 		return nil, err
@@ -80,7 +80,7 @@ func (s *SigstoreTufClient) Initialize(opts *RepositoryOptions) error {
 func (s *SigstoreTufClient) GetTrustedRootStore() error {
 	if !s.initialized {
 		// unexpected
-		return errors.New("Sigstore TUF client must be initialized before usage")
+		return errors.New("sigstore TUF client must be initialized before usage")
 	}
 
 	// This will check the local trusted metadata and assemble the TrustedRootStore

@@ -23,7 +23,7 @@ const (
 	Disk
 )
 
-type TUFClientOptions struct {
+type ClientOptions struct {
 	// This indicates whether the cache should be in the local filesystem or in-memory.
 	// Default: Memory.
 	CacheType CacheKind

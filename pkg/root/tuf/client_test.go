@@ -24,8 +24,8 @@ import (
 )
 
 // TODO(asraa): Add support for:
-//   * expired timestamps and other repository states with embedded testdata.
-//   * concurrency
+//   - expired timestamps and other repository states with embedded testdata.
+//   - concurrency
 func TestInitialize(t *testing.T) {
 	t.Parallel()
 	td := t.TempDir()
@@ -44,14 +44,14 @@ func TestInitialize(t *testing.T) {
 
 	testCases := []struct {
 		name          string
-		tufOpts       *TUFClientOptions
+		tufOpts       *ClientOptions
 		repoOpts      *RepositoryOptions
 		wantClientErr bool
 		wantInitErr   bool
 	}{
 		{
-			name: "fail: unkown cache type",
-			tufOpts: &TUFClientOptions{
+			name: "fail: unknown cache type",
+			tufOpts: &ClientOptions{
 				CacheType: 3,
 			},
 			repoOpts:      &RepositoryOptions{},
@@ -59,7 +59,7 @@ func TestInitialize(t *testing.T) {
 		},
 		{
 			name: "valid memory cache with fs remote",
-			tufOpts: &TUFClientOptions{
+			tufOpts: &ClientOptions{
 				CacheType: Memory,
 			},
 			repoOpts: &RepositoryOptions{
@@ -70,7 +70,7 @@ func TestInitialize(t *testing.T) {
 		},
 		{
 			name: "valid memory cache with http remote",
-			tufOpts: &TUFClientOptions{
+			tufOpts: &ClientOptions{
 				CacheType: Memory,
 			},
 			repoOpts: &RepositoryOptions{

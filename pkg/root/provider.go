@@ -13,8 +13,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/* This package implements a root provider interface that can be
-   implemented with a TUF client or other */
+// This package implements a root provider interface that can be
+//
+//	implemented with a TUF client or other
 package root
 
 // TrustedRootProvider is an interface that can generate a trusted
