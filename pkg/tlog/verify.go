@@ -40,7 +40,8 @@ type VerificationPayload struct {
 // VerifyTlogSET verifies the SET for the given TransparencyLogEntry using the trusted
 // verifiers indexed by LogID.
 func VerifyTlogSET(ctx context.Context,
-	entry *rekor_v1.TransparencyLogEntry, trustedKeys map[string]signature.Verifier) error {
+	entry *rekor_v1.TransparencyLogEntry, trustedKeys map[string]signature.Verifier,
+) error {
 	// Create the signed tlog verification payload.
 	payload, err := verificationPayload(entry)
 	if err != nil {

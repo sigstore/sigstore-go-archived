@@ -46,5 +46,4 @@ func GetLogID(entry *rekor_v1.TransparencyLogEntry) (string, error) {
 	}
 
 	return hex.EncodeToString(entry.LogId.GetKeyId()), nil
-
 }
