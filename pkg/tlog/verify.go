@@ -30,6 +30,9 @@ import (
 	"github.com/sigstore/sigstore/pkg/signature/options"
 )
 
+// VerificationPayload is a struct containing the payload the
+// SignedEntryTimestamp signs over. The signed payload is constructed from
+// the JSON canonicalized bytes of this struct.
 type VerificationPayload struct {
 	Body           interface{} `json:"body"`
 	IntegratedTime int64       `json:"integratedTime"`
@@ -37,8 +40,8 @@ type VerificationPayload struct {
 	LogID          string      `json:"logID"`
 }
 
-// VerifyTlogSET verifies the SET for the given TransparencyLogEntry using the trusted
-// verifiers indexed by LogID.
+// VerifyTlogSET verifies the SignedEntryTimestamp (SET) for the given
+// TransparencyLogEntry using the trusted verifiers indexed by LogID.
 func VerifyTlogSET(ctx context.Context,
 	entry *rekor_v1.TransparencyLogEntry, trustedKeys map[string]signature.Verifier,
 ) error {

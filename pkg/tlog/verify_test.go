@@ -19,7 +19,6 @@ package tlog
 import (
 	"bytes"
 	"context"
-	"encoding/base64"
 	"encoding/hex"
 	"encoding/json"
 	"testing"
@@ -28,10 +27,6 @@ import (
 	common_v1 "github.com/sigstore/protobuf-specs/gen/pb-go/common/v1"
 	rekor_v1 "github.com/sigstore/protobuf-specs/gen/pb-go/rekor/v1"
 	"github.com/sigstore/sigstore/pkg/signature"
-)
-
-const (
-	encodedBody = "ayJhcGlWZXJzaW9uIjoiMC4wLjEiLCJraW5kIjoicmVrb3JkIiwic3BlYyI6eyJkYXRhIjp7Imhhc2giOnsiYWxnb3JpdGhtIjoic2hhMjU2IiwidmFsdWUiOiJlY2RjNTUzNmY3M2JkYWU4ODE2ZjBlYTQwNzI2ZWY1ZTliODEwZDkxNDQ5MzA3NTkwM2JiOTA2MjNkOTdiMWQ4In19LCJzaWduYXR1cmUiOnsiY29udGVudCI6Ik1FWUNJUUQvUGRQUW1LV0MxKzBCTkVkNWdLdlFHcjF4eGwzaWVVZmZ2M2prMXp6Skt3SWhBTEJqM3hmQXlXeGx6NGpwb0lFSVYxVWZLOXZua1VVT1NvZVp4QlpQSEtQQyIsImZvcm1hdCI6Ing1MDkiLCJwdWJsaWNLZXkiOnsiY29udGVudCI6IkxTMHRMUzFDUlVkSlRpQlFWVUpNU1VNZ1MwVlpMUzB0TFMwS1RVWnJkMFYzV1VoTGIxcEplbW93UTBGUldVbExiMXBKZW1vd1JFRlJZMFJSWjBGRlRVOWpWR1pTUWxNNWFtbFlUVGd4UmxvNFoyMHZNU3R2YldWTmR3cHRiaTh6TkRjdk5UVTJaeTlzY21sVE56SjFUV2haT1V4alZDczFWVW8yWmtkQ1oyeHlOVm80VERCS1RsTjFZWE41WldRNVQzUmhVblozUFQwS0xTMHRMUzFGVGtRZ1VGVkNURWxESUV0RldTMHRMUzB0Q2c9PSJ9fX19"
 )
 
 func TestVerifyTlogSET(t *testing.T) {
@@ -51,11 +46,6 @@ func TestVerifyTlogSET(t *testing.T) {
 		t.Fatalf("decoding log id: %v", err)
 	}
 
-	body, err := base64.RawStdEncoding.DecodeString(encodedBody)
-	if err != nil {
-		t.Fatalf("error decoding body: %v", err)
-	}
-
 	tlogEntry := &rekor_v1.TransparencyLogEntry{
 		LogIndex: int64(1),
 		LogId: &common_v1.LogId{
@@ -64,7 +54,7 @@ func TestVerifyTlogSET(t *testing.T) {
 			},
 		},
 		IntegratedTime:    int64(1661794812),
-		CanonicalizedBody: body,
+		CanonicalizedBody: []byte("foo"),
 		InclusionPromise:  &rekor_v1.InclusionPromise{},
 	}
 	payload, err := verificationPayload(tlogEntry)
@@ -106,11 +96,11 @@ func TestVerifyTlogSET(t *testing.T) {
 			wantErr: true,
 		},
 		{
-			name: "fail: missing  entry log id",
+			name: "fail: missing entry log id",
 			entry: &rekor_v1.TransparencyLogEntry{
 				LogIndex:          int64(1),
 				IntegratedTime:    int64(1661794812),
-				CanonicalizedBody: body,
+				CanonicalizedBody: []byte("foo"),
 				InclusionPromise:  &rekor_v1.InclusionPromise{},
 			},
 			wantErr: true,
@@ -125,7 +115,7 @@ func TestVerifyTlogSET(t *testing.T) {
 					},
 				},
 				IntegratedTime:    int64(1661794812),
-				CanonicalizedBody: body,
+				CanonicalizedBody: []byte("foo"),
 			},
 			wantErr: true,
 		},
@@ -140,7 +130,7 @@ func TestVerifyTlogSET(t *testing.T) {
 					},
 				},
 				IntegratedTime:    int64(1661794812),
-				CanonicalizedBody: body,
+				CanonicalizedBody: []byte("foo"),
 				InclusionPromise: &rekor_v1.InclusionPromise{
 					SignedEntryTimestamp: []byte("foo"),
 				},

@@ -26,7 +26,8 @@ import (
 	rekor_v1 "github.com/sigstore/protobuf-specs/gen/pb-go/rekor/v1"
 )
 
-// ComputeLogID generates a SHA256 hash of a DER-encoded public key.
+// ComputeLogID generates a SHA256 hash of a DER-encoded public key, which is
+// the log ID of a transparency log.
 func ComputeLogID(pub crypto.PublicKey) (string, error) {
 	pubBytes, err := x509.MarshalPKIXPublicKey(pub)
 	if err != nil {
@@ -36,6 +37,7 @@ func ComputeLogID(pub crypto.PublicKey) (string, error) {
 	return hex.EncodeToString(digest[:]), nil
 }
 
+// GetLogID returns the hex-encoded log ID from the TransparencyLogEntry.
 func GetLogID(entry *rekor_v1.TransparencyLogEntry) (string, error) {
 	if entry.GetLogId() == nil {
 		return "", errors.New("entry missing Log ID")
