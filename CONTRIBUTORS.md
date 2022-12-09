@@ -7,11 +7,14 @@ create a pull request and write a commit message.
 
 ## Philosophy
 
-A primary goal of sigstore-go is to take our time and do a solid good job with:
+The primary goal of sigstore-go is build a reliable, robust library.  This will 
+be acheived by adhereing to the folllowing principles:
 
-- Learning from other libraries ([Java], [Rust], [Python], [Ruby]) and clients
-  ([Gitsign], [Cosign], [policy-controller]).
-- API design
+- Learn from other libraries ([Java], [Rust], [Python], [Ruby]) and clients
+  ([Gitsign], [Cosign], [policy-controller]). What was executed well and what
+  should be avoided.
+- Optimal API design
+- Avoidance of any techincal debt (move fast, fix later).
 - Conformance to [Sigstore specifications][arch-docs] and integration with [data
   formats][protobuf-specs].
 - Testability:
@@ -20,9 +23,8 @@ A primary goal of sigstore-go is to take our time and do a solid good job with:
   - Good fakes (the Sigstore infrastructure is written in Go, so it should be
     easy to run an in-memory copy).
 
-To that end, we're going to have a high bar for code quality and design, err on
-the side of more-involved review processes, and block for other
-Sigstore-ecosystem initiatives to complete in some cases.
+This library values good code quality thoughtful design and errs on
+the side of a more-involved review processes.
 
 [arch-docs]: https://github.com/sigstore/architecture-docs
 [protobuf-specs]: https://github.com/sigstore/protobuf-specs
