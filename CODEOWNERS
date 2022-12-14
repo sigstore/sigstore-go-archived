@@ -1,4 +1,9 @@
+@sigstore/sigstore-go-codeowners
+
 # The CODEOWNERS are managed via a GitHub team, but the current list is (in alphabetical order):
 #
-lukehinds
-znewman01 
+# asraa
+# haydentherapper
+# imjasonh
+# lukehinds
+# znewman01 
