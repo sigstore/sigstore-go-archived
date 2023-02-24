@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/cyberphone/json-canonicalization v0.0.0-20210303052042-6bc126869bf4
-	github.com/theupdateframework/go-tuf v0.5.2-0.20221104082613-2ac63f72c7df
+	github.com/theupdateframework/go-tuf v0.5.2
 )
 
 require (
