@@ -25,7 +25,7 @@ require (
 
 require (
 	github.com/secure-systems-lab/go-securesystemslib v0.5.0 // indirect
-	github.com/sigstore/protobuf-specs v0.0.0-20221123204033-dfe069610b3b
+	github.com/sigstore/protobuf-specs v0.1.0
 	github.com/sigstore/sigstore v1.6.0
 	golang.org/x/crypto v0.6.0 // indirect
 	golang.org/x/sys v0.5.0 // indirect
