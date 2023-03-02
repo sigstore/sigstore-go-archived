@@ -51,14 +51,8 @@ func TestGetLogID(t *testing.T) {
 		{
 			name: "fail: missing key id",
 			entry: &rekor_v1.TransparencyLogEntry{
-				LogIndex: int64(1),
-				LogId: &common_v1.LogId{
-					Id: &common_v1.LogId_Oid{
-						Oid: &common_v1.ObjectIdentifier{
-							Id: []int32{1, 2},
-						},
-					},
-				},
+				LogIndex:          int64(1),
+				LogId:             &common_v1.LogId{},
 				IntegratedTime:    int64(1661794812),
 				CanonicalizedBody: []byte("foo"),
 				InclusionPromise:  &rekor_v1.InclusionPromise{},
@@ -70,9 +64,7 @@ func TestGetLogID(t *testing.T) {
 			entry: &rekor_v1.TransparencyLogEntry{
 				LogIndex: int64(1),
 				LogId: &common_v1.LogId{
-					Id: &common_v1.LogId_KeyId{
-						KeyId: logID,
-					},
+					KeyId: logID,
 				},
 				IntegratedTime:    int64(1661794812),
 				CanonicalizedBody: []byte("foo"),
