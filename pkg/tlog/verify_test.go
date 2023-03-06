@@ -49,9 +49,7 @@ func TestVerifyTlogSET(t *testing.T) {
 	tlogEntry := &rekor_v1.TransparencyLogEntry{
 		LogIndex: int64(1),
 		LogId: &common_v1.LogId{
-			Id: &common_v1.LogId_KeyId{
-				KeyId: decodedLogID,
-			},
+			KeyId: decodedLogID,
 		},
 		IntegratedTime:    int64(1661794812),
 		CanonicalizedBody: []byte("foo"),
@@ -110,9 +108,7 @@ func TestVerifyTlogSET(t *testing.T) {
 			entry: &rekor_v1.TransparencyLogEntry{
 				LogIndex: int64(1),
 				LogId: &common_v1.LogId{
-					Id: &common_v1.LogId_KeyId{
-						KeyId: decodedLogID,
-					},
+					KeyId: decodedLogID,
 				},
 				IntegratedTime:    int64(1661794812),
 				CanonicalizedBody: []byte("foo"),
@@ -125,9 +121,7 @@ func TestVerifyTlogSET(t *testing.T) {
 			entry: &rekor_v1.TransparencyLogEntry{
 				LogIndex: int64(1),
 				LogId: &common_v1.LogId{
-					Id: &common_v1.LogId_KeyId{
-						KeyId: decodedLogID,
-					},
+					KeyId: decodedLogID,
 				},
 				IntegratedTime:    int64(1661794812),
 				CanonicalizedBody: []byte("foo"),
