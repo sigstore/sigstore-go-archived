@@ -33,8 +33,8 @@ github.com/prometheus/common v0.37.0 h1:ccBbHCgIiT9uSoFY0vX8H3zsNR5eLt17/RQLUvn8
 github.com/prometheus/procfs v0.8.0 h1:ODq8ZFEaYeCaZOJlZZdJA2AbQR98dSHSM1KW/You5mo=
 github.com/secure-systems-lab/go-securesystemslib v0.6.0 h1:T65atpAVCJQK14UA57LMdZGpHi4QYSH/9FZyNGqMYIA=
 github.com/secure-systems-lab/go-securesystemslib v0.6.0/go.mod h1:8Mtpo9JKks/qhPG4HGZ2LGMvrPbzuxwfz/f/zLfEWkk=
-github.com/sigstore/protobuf-specs v0.1.0 h1:X0l/E2C2c79t/rI/lmSu8WAoKWsQtMqDzAMiDdEMGr8=
-github.com/sigstore/protobuf-specs v0.1.0/go.mod h1:5shUCxf82hGnjUEFVWiktcxwzdtn6EfeeJssxZ5Q5HE=
+github.com/sigstore/protobuf-specs v0.2.0 h1:YFG4UYfBSQ608m3ZnIOtRDggt+3g6sMoxRASw/y3XZU=
+github.com/sigstore/protobuf-specs v0.2.0/go.mod h1:5shUCxf82hGnjUEFVWiktcxwzdtn6EfeeJssxZ5Q5HE=
 github.com/sigstore/sigstore v1.7.1 h1:fCATemikcBK0cG4+NcM940MfoIgmioY1vC6E66hXxks=
 github.com/sigstore/sigstore v1.7.1/go.mod h1:0PmMzfJP2Y9+lugD0wer4e7TihR5tM7NcIs3bQNk5xg=
 github.com/stretchr/testify v1.8.4 h1:CcVxjf3Q8PM0mHUKJCdn+eZZtm5yQwehR5yeSVQQcUk=
