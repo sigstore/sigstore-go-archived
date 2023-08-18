@@ -43,5 +43,5 @@ See [Sigstore in Golang](https://docs.google.com/document/d/1aZfk1TlzcuaO0uz76M9
 
 ## Security
 
-Should you discover any security issues, please refer to sigstores [security
-process](https://github.com/sigstore/community/blob/main/SECURITY.md)
+Should you discover any security issues, please refer to Sigstore's [security
+process](https://github.com/sigstore/sigstore-go/security/policy).
