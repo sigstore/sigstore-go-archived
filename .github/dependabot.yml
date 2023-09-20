@@ -19,9 +19,11 @@ updates:
     directory: "/"
     schedule:
       interval: daily
-    open-pull-requests-limit: 10
+  - package-ecosystem: gomod
+    directory: "./old-sigstore-go"
+    schedule:
+      interval: daily
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
       interval: daily
-    open-pull-requests-limit: 10
