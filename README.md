@@ -1,4 +1,6 @@
-# sigstore-go 
+# sigstore-go-archived
+
+:warning: This project is archived and will no longer receive updates, we have a new project to replace, please refer to https://github.com/sigstore/sigstore-go
 
 This is a Go client library for [Sigstore](https://sigstore.dev/).
 
